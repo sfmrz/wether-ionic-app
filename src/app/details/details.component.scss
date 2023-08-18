@@ -1,0 +1,43 @@
+ion-content {
+  --background: linear-gradient(#27ae60, #1abc9c) !important;
+  --ion-text-color: #33333;
+
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    ion-card-title {
+      font-weight: 400;
+    }
+    ion-card-subtitle {
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #333333;
+    }
+    ion-card {
+      background-color: #dcdcdc;
+    }
+    ion-row {
+      font-size: 1.5em;
+      color: #333333;
+    }
+  }
+}
+
+.error {
+  display: block;
+  height: 100%;
+  text-align: center;
+  padding-top: 2em;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.spinner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

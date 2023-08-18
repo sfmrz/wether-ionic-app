@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refreshData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="main-container" *ngIf="!isLoading; else loadingSpinner">
+    <div class="content-wrapper" *ngIf="!isLoading && data; else noData">
+      <div class="icon-date-container">
+        <span class="city">Dublin</span>
+        <span class="date">{{ timestampToHuman(data.current.dt, data.timezone_offset) | date:'medium':'UTC' }}</span>
+      </div>
+      <div class="icon">
+        <img src="https://openweathermap.org/img/wn/{{data.current.weather[0].icon}}@2x.png" alt="logo">
+      </div>
+
+      <span class="description">{{data.current.weather[0].description | titlecase}}</span>
+      <span class="temperature">{{data.current.temp | number: '1.0-0'}}°C</span>
+
+      <div class="grid-container">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="day" *ngFor="let day of data.daily">
+              {{day.dt | day}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="precipitation" *ngFor="let prep of data.daily">{{(prep.rain | number: '1.0-0') || 0}}%</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="whether-icon" *ngFor="let dayIcon of data.daily">
+              <img src="https://openweathermap.org/img/wn/{{dayIcon.weather[0].icon}}@2x.png">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="max-temperature" *ngFor="let day of data.daily">
+              {{ day.temp.max | number: '1.0-0' }}°
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="min-temperature" *ngFor="let day of data.daily">
+              {{ day.temp.min | number: '1.0-0' }}°
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+  <ng-template #loadingSpinner>
+    <div class="spinner">
+      <ion-spinner></ion-spinner>
+    </div>
+  </ng-template>
+  <ng-template #noData><p class="error">Data not provided</p></ng-template>
+</ion-content>

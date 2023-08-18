@@ -1,0 +1,7 @@
+{
+  "name": "whether-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,26 @@
+<ion-app>
+  <ion-header [translucent]="true" class="header">
+    <ion-toolbar class="toolbar">
+      <ion-title>
+        Whether App
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-router-outlet></ion-router-outlet>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="flash-outline"></ion-icon>
+        Week
+      </ion-tab-button>
+      <ion-tab-button tab="details">
+        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        Details
+      </ion-tab-button>
+      <ion-tab-button tab="alerts">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        Alerts
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>

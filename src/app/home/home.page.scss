@@ -1,0 +1,115 @@
+$size1: 8em;
+$size2: 3.5em;
+$size3: 3em;
+$size4: 2em;
+$size5: 1.5em;
+$size6: 1em;
+
+ion-content {
+  --ion-font-family: 'Roboto' sans-serif;
+}
+
+ion-header {
+  --ion-text-color: #f0f0f0;
+}
+
+ion-content {
+  --background: linear-gradient(#3498db, #f39c12) !important;
+  --ion-text-color: #333333;
+}
+
+.main-container {
+  padding-top: 5em;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon-date-container {
+  padding-top: 0.3em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+}
+
+.city {
+  width: 80%;
+  text-align: left;
+  display: block;
+  font-size: $size3;
+  font-weight: bold;
+}
+
+.date {
+  padding-top: 12px;
+  display: block;
+  font-size: $size5;
+  font-weight: bold;
+}
+
+.description {
+  width: 80%;
+  text-align: left;
+  display: block;
+  font-size: $size4;
+  font-weight: bold;
+}
+
+.temperature {
+  display: block;
+  font-weight: bold;
+  font-size: $size1;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  display: block;
+  padding-top: 0;
+
+  img {
+    height: 110px;
+    width: 110px;
+  }
+}
+
+ion-grid {
+  text-align: center;
+}
+
+.day {
+  font-weight: bold;
+  display: block;
+}
+
+.precipitation, .whether-icon, .max-temperature, .min-temperature  {
+  display: block;
+  font-weight: 600;
+}
+
+.whether-icon {
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.error {
+  display: block;
+  height: 100%;
+  text-align: center;
+  padding-top: 2em;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.spinner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
